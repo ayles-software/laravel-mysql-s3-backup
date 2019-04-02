@@ -35,7 +35,7 @@ This package is very opinionated. Other backup scripts can support other databas
 4. Publish and edit the config
 
     ```bash
-    $ php artisan config:publish parkourben99/laravel-mysql-s3-backup
+    $ php vendor:publish --provider=parkourben99/laravel-mysql-s3-backup
     ```
 
     Edit `config/laravel-mysql-s3-backup.php`:
