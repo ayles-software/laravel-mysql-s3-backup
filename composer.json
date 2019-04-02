@@ -1,21 +1,32 @@
 {
-    "name": "fitztrev/laravel-mysql-s3-backup",
+    "name": "parkourben99/laravel-mysql-s3-backup",
     "description": "Backup the MySQL database of your Laravel app to Amazon S3",
     "authors": [
         {
             "name": "Trevor Fitzgerald",
             "email": "fitztrev@gmail.com"
+        },
+        {
+            "name": "Benjamin Ayles",
+            "email": "ben@aylessoftware.com"
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "illuminate/support": "4.2.*",
+        "php": ">=7.0.0",
+        "illuminate/support": "^5.2",
         "aws/aws-sdk-php": "2.*"
     },
     "autoload": {
         "psr-0": {
-            "Fitztrev\\LaravelMysqlS3Backup\\": "src/"
+            "LaravelMysqlS3Backup\\": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelMysqlS3Backup\\ServiceProvider"
+            ]
+        }
+    }
 }

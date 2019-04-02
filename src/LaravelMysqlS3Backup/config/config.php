@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
 	/*
 	 * Configure with your Amazon S3 credentials
@@ -11,8 +11,8 @@ return array(
 	 * to disable S3 uploading entirely
 	 */
 	's3' => [
-		'key'    => 'AMAZON_API_KEY',
-		'secret' => 'AMAZON_API_SECRET',
+		'key'    => env('AWS_KEY'),
+		'secret' => env('AWS_SECRET'),
 		'bucket' => 'your-bucket-name',
 	],
 	// 's3' => false,
@@ -38,4 +38,4 @@ return array(
 	 */
 	'keep_local_copy' => false,
 
-);
+];

@@ -6,10 +6,13 @@ This package is very opinionated. Other backup scripts can support other databas
 
 ## Installation
 
-1. Add it to your `composer.json`:
+1. Install package
 
+    ```composer require parkourben99/laravel-mysql-s3-backup```
+      
+    Or add it to your `composer.json`:
     ```
-    "fitztrev/laravel-mysql-s3-backup": "dev-master"
+    "parkourben99/laravel-mysql-s3-backup": "1.0"
     ```
 
 2. Update your composer packages
@@ -18,22 +21,24 @@ This package is very opinionated. Other backup scripts can support other databas
     $ composer update
     ```
 
-3. Update `app/config/app.php`:
+3. Update `config/app.php`:
+
+   Service Provider is autoloaded if you want to registered it manually then add
 
     ```php
     'providers' => array(
         ...
-        'Fitztrev\LaravelMysqlS3Backup\LaravelMysqlS3BackupServiceProvider',
+        'LaravelMysqlS3Backup\ServiceProvider',
     ),
     ```
 
 4. Publish and edit the config
 
     ```bash
-    $ php artisan config:publish fitztrev/laravel-mysql-s3-backup
+    $ php artisan config:publish parkourben99/laravel-mysql-s3-backup
     ```
 
-    Edit `app/config/packages/fitztrev/laravel-mysql-s3-backup/config.php`:
+    Edit `config/laravel-mysql-s3-backup.php`:
 
     ```php
     's3' => [
