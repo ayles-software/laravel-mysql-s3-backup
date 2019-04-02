@@ -11,9 +11,9 @@ return [
 	 * to disable S3 uploading entirely
 	 */
 	's3' => [
-		'key'    => env('AWS_KEY'),
-		'secret' => env('AWS_SECRET'),
-		'bucket' => 'your-bucket-name',
+		'key'    => env('AWS_API_KEY'),
+		'secret' => env('AWS_API_SECRET'),
+		'bucket' => env('AWS_S3_BUCKET'),
 	],
 	// 's3' => false,
 
@@ -30,7 +30,7 @@ return [
 	/*
 	 * Where to store the backup file locally
 	 */
-	'backup_dir'      => '/tmp',
+	'backup_dir' => '/tmp',
 
 	/*
 	 * Do you want to keep a copy of it or delete it

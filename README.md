@@ -12,7 +12,7 @@ This package is very opinionated. Other backup scripts can support other databas
       
     Or add it to your `composer.json`:
     ```
-    "parkourben99/laravel-mysql-s3-backup": "1.0"
+    "parkourben99/laravel-mysql-s3-backup": "1.*"
     ```
 
 2. Update your composer packages
