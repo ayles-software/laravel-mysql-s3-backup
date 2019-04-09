@@ -25,7 +25,7 @@ return [
 	/*
 	 * Backup filename
 	 */
-	'filename' => sprintf('backup-%s.sql', date('Ymd-His')),
+	'filename' => 'backup-%s.sql',
 
 	/*
 	 * Where to store the backup file locally

@@ -39,7 +39,7 @@ class MysqlS3Backup extends Command
 			escapeshellarg(config('database.connections.mysql.database'))
 		);
 
-		$fileName = config('laravel-mysql-s3-backup.backup_dir') . '/' . config('laravel-mysql-s3-backup.filename');
+		$fileName = config('laravel-mysql-s3-backup.backup_dir') . '/' . sprintf(config('laravel-mysql-s3-backup.filename'), date('Ymd-His'));
 
 		// Handle gzip
 		if (config('laravel-mysql-s3-backup.gzip')) {
