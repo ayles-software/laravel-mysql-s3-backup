@@ -2,7 +2,6 @@
 
 namespace LaravelMysqlS3Backup;
 
-use LaravelMysqlS3Backup\Commands\MysqlS3Backup;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 class ServiceProvider extends BaseServiceProvider
@@ -19,16 +18,15 @@ class ServiceProvider extends BaseServiceProvider
         ], 'config');
     }
 
-
     /**
-	 * Register the service provider.
-	 *
-	 * @return void
-	 */
-	public function register()
-	{
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
         $this->commands([
             MysqlS3Backup::class,
         ]);
-	}
+    }
 }
