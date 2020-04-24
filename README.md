@@ -1,6 +1,7 @@
 # Laravel MySQL to S3 Backup
 
-This is a very simple database backup script for Laravel. It takes a `mysqldump` and optionally saves it to [Amazon S3](http://aws.amazon.com/s3/).
+This is a very simple database backup script for Laravel. It takes a `mysqldump` and saves it to [Amazon S3](http://aws.amazon.com/s3/). 
+It also supports trimming backups to only have X days worth on S3.
 
 This package is very opinionated. Other backup scripts can support other database types or other places besides S3 to store your backup. This does not.
 
@@ -8,11 +9,11 @@ This package is very opinionated. Other backup scripts can support other databas
 
 1. Install package
 
-    ```composer require parkourben99/laravel-mysql-s3-backup```
+    ```composer require ayles-software/laravel-mysql-s3-backup```
       
     Or add it to your `composer.json`:
     ```
-    "parkourben99/laravel-mysql-s3-backup": "1.*"
+    "ayles-software/laravel-mysql-s3-backup": "4.*"
     ```
 
 2. Update your composer packages
@@ -21,18 +22,7 @@ This package is very opinionated. Other backup scripts can support other databas
     $ composer update
     ```
 
-3. Update `config/app.php`:
-
-   Service Provider is autoloaded if you want to registered it manually then add
-
-    ```php
-    'providers' => array(
-        ...
-        'LaravelMysqlS3Backup\ServiceProvider',
-    ),
-    ```
-
-4. Publish and edit the config
+3. Publish and edit the config
 
     ```bash
     $ php vendor:publish --provider=parkourben99/laravel-mysql-s3-backup
@@ -55,3 +45,11 @@ $ php artisan db:backup
 ```
 
 That's it. No arguments or optional parameters.
+
+### Credit
+
+This package was originally forked from [fitztrev](https://github.com/fitztrev/laravel-mysql-s3-backup) before a complete rewrite.
+
+## License
+
+Xero Laravel is open-sourced software licensed under the [MIT license](https://github.com/ayles-software/xero-laravel/blob/master/LICENSE.md).
