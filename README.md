@@ -53,4 +53,4 @@ This package was originally forked from [fitztrev](https://github.com/fitztrev/l
 
 ## License
 
-Xero Laravel is open-sourced software licensed under the [MIT license](https://github.com/ayles-software/laravel-mysql-s3-backup/blob/master/LICENSE.md).
+Laravel MySQL to S3 Backup is open-sourced software licensed under the [MIT license](https://github.com/ayles-software/laravel-mysql-s3-backup/blob/master/LICENSE.md).
