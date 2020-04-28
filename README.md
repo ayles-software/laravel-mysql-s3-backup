@@ -25,7 +25,7 @@ This package is very opinionated. Other backup scripts can support other databas
 3. Publish and edit the config
 
     ```bash
-    $ php vendor:publish --provider=parkourben99/laravel-mysql-s3-backup
+    $ php artisan vendor:publish --provider=ayles-software/laravel-mysql-s3-backup
     ```
 
     Edit `config/laravel-mysql-s3-backup.php`:
@@ -35,6 +35,7 @@ This package is very opinionated. Other backup scripts can support other databas
         'key'    => 'AMAZON_API_KEY',
         'secret' => 'AMAZON_API_SECRET',
         'bucket' => 'your-bucket-name',
+        'region' => 'your-bucket-region',
     ],
     ```
 
@@ -52,4 +53,4 @@ This package was originally forked from [fitztrev](https://github.com/fitztrev/l
 
 ## License
 
-Xero Laravel is open-sourced software licensed under the [MIT license](https://github.com/ayles-software/xero-laravel/blob/master/LICENSE.md).
+Laravel MySQL to S3 Backup is open-sourced software licensed under the [MIT license](https://github.com/ayles-software/laravel-mysql-s3-backup/blob/master/LICENSE.md).
