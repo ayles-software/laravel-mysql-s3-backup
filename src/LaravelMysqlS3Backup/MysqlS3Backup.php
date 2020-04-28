@@ -31,8 +31,9 @@ class MysqlS3Backup extends Command
      */
     public function handle()
     {
-        $cmd = sprintf('mysqldump --host=%s --user=%s --password=%s --single-transaction --routines --triggers',
+        $cmd = sprintf('mysqldump --host=%s --port=%s --user=%s --password=%s --single-transaction --routines --triggers',
             escapeshellarg(config('database.connections.mysql.host')),
+            escapeshellarg(config('database.connections.mysql.port')),
             escapeshellarg(config('database.connections.mysql.username')),
             escapeshellarg(config('database.connections.mysql.password'))
         );
