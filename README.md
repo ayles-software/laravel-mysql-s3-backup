@@ -9,11 +9,12 @@ This package is very opinionated. Other backup scripts can support other databas
 
 1. Install package
 
-    ```composer require ayles-software/laravel-mysql-s3-backup```
-      
+    ```
+    composer require ayles-software/laravel-mysql-s3-backup
+    ```
     Or add it to your `composer.json`:
     ```
-    "ayles-software/laravel-mysql-s3-backup": "4.*"
+    "ayles-software/laravel-mysql-s3-backup": "^4.0"
     ```
 
 2. Update your composer packages
