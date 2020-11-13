@@ -32,6 +32,7 @@ class S3BackupTrimmer
                 'key' => config('laravel-mysql-s3-backup.s3.key'),
                 'secret' => config('laravel-mysql-s3-backup.s3.secret'),
             ],
+            'endpoint' => config('laravel-mysql-s3-backup.s3.endpoint'),
             'region' => config('laravel-mysql-s3-backup.s3.region'),
             'version' => 'latest',
         ]);
