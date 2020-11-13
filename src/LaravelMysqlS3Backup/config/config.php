@@ -11,6 +11,7 @@ return [
         'secret' => env('AWS_API_SECRET'),
         'bucket' => env('AWS_S3_BUCKET'),
         'region' => env('AWS_S3_REGION'),
+        'endpoint' => env('AWS_ENDPOINT'),
     ],
 
     /*
