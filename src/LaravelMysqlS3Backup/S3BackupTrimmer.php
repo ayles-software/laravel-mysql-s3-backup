@@ -4,6 +4,7 @@ namespace LaravelMysqlS3Backup;
 
 use Carbon\Carbon;
 use Aws\S3\S3Client;
+use Illuminate\Support\Str;
 
 class S3BackupTrimmer
 {
@@ -40,9 +41,15 @@ class S3BackupTrimmer
         with($s3->listObjects([
             'Bucket' => $this->bucket,
         ]), function ($response) {
-            return collect($response['Contents'] ?? [])->transform(function ($item) {
-                return $item['Key'];
-            });
+            return collect($response['Contents'] ?? [])
+                ->when(! empty(config('laravel-mysql-s3-backup.s3.folder')), function ($contents) {
+                    return collect($contents)->reject(function ($item) {
+                        return ! Str::startsWith($item['Key'], config('laravel-mysql-s3-backup.s3.folder').'/');
+                    })->values();
+                })
+                ->transform(function ($item) {
+                    return $item['Key'];
+                });
         })->filter(function ($filename) {
             [$_, $date, $time] = explode('-', $filename);
 

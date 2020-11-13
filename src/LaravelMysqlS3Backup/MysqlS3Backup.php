@@ -98,14 +98,19 @@ class MysqlS3Backup extends Command
         ]);
 
         $bucket = config('laravel-mysql-s3-backup.s3.bucket');
+        $key = basename($fileName);
+
+        if ($folder = config('laravel-mysql-s3-backup.s3.folder')) {
+            $key = $folder . '/' . $key;
+        }
 
         if ($this->output->isVerbose()) {
-            $this->output->writeln(sprintf('Uploading %s to S3/%s', basename($fileName), $bucket));
+            $this->output->writeln(sprintf('Uploading %s to S3/%s', $key, $bucket));
         }
 
         $uploader = new MultipartUploader($s3, $fileName, [
             'bucket' => $bucket,
-            'key' => basename($fileName),
+            'key' => $key,
         ]);
 
         try {

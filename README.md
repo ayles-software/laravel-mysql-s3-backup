@@ -38,6 +38,7 @@ This package is very opinionated. Other backup scripts can support other databas
         'bucket' => 'your-bucket-name',
         'region' => 'your-bucket-region',
         'endpoint' => env('AWS_ENDPOINT'),
+        'folder' => env('BACKUP_FOLDER'),
     ],
     ```
 

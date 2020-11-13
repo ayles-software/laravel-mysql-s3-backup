@@ -12,6 +12,7 @@ return [
         'bucket' => env('AWS_S3_BUCKET'),
         'region' => env('AWS_S3_REGION'),
         'endpoint' => env('AWS_ENDPOINT'),
+        'folder' => env('BACKUP_FOLDER'),
     ],
 
     /*
