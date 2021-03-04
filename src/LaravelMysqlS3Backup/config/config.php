@@ -13,6 +13,7 @@ return [
         'region' => env('AWS_S3_REGION'),
         'endpoint' => env('AWS_ENDPOINT'),
         'folder' => env('BACKUP_FOLDER'),
+        'use_path_style_endpoint' => env('USE_PATH_STYLE_ENDPOINT', false),
     ],
 
     /*

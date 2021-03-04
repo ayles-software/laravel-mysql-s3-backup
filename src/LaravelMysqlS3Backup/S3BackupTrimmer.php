@@ -36,6 +36,7 @@ class S3BackupTrimmer
             'endpoint' => config('laravel-mysql-s3-backup.s3.endpoint'),
             'region' => config('laravel-mysql-s3-backup.s3.region'),
             'version' => 'latest',
+            'use_path_style_endpoint' => config('laravel-mysql-s3-backup.s3.use_path_style_endpoint'),
         ]);
 
         with($s3->listObjects([
