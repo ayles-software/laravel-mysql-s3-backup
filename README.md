@@ -12,21 +12,11 @@ This package is very opinionated. Other backup scripts can support other databas
     ```
     composer require ayles-software/laravel-mysql-s3-backup
     ```
-    Or add it to your `composer.json`:
-    ```
-    "ayles-software/laravel-mysql-s3-backup": "^4.0"
-    ```
 
-2. Update your composer packages
+2. Publish and edit the config
 
     ```bash
-    $ composer update
-    ```
-
-3. Publish and edit the config
-
-    ```bash
-    $ php artisan vendor:publish --provider="LaravelMysqlS3Backup\ServiceProvider"
+    php artisan vendor:publish --provider="LaravelMysqlS3Backup\ServiceProvider"
     ```
 
     Edit `config/laravel-mysql-s3-backup.php`:
