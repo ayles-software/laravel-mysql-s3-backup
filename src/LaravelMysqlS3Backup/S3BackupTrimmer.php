@@ -55,7 +55,7 @@ class S3BackupTrimmer
             if (! empty(config('laravel-mysql-s3-backup.s3.folder'))) {
                 $filename = str_replace(config('laravel-mysql-s3-backup.s3.folder').'/', '', $filename);
             }
-            
+
             [$_, $date, $time] = explode('-', $filename);
 
             return (Carbon::createFromFormat('Ymd', $date))->lt($this->when);

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 return [
     /*
      * Configure with your Amazon S3 credentials
@@ -22,7 +24,7 @@ return [
     'custom_mysqldump_args' => null,
 
     /*
-     * Whether or not to gzip the .sql file
+     * Whether to gzip the .sql file
      */
     'gzip' => true,
 
@@ -34,7 +36,7 @@ return [
     /*
      * Backup filename
      */
-    'filename' => 'backup-%s.sql',
+    'filename' => Str::slug(env('APP_NAME')).'backup-%s.sql',
 
     /*
      * Where to store the backup file locally
